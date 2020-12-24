@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index page</title>
+</head>
+<body>
+    <h1>Hello world</h1>
+    <table width='40%'>
+        <tr>
+            <td>Name</td>
+            <td>Color</td>
+            <td>Price</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+        {{#each model}}
+        <tr>            
+            <td>{{productName}}</td>
+            <td>{{color}}</td>
+            <td>{{price}}</td>
+            <td>
+                <a href="/edit?id={{_id}}">Edit</a>
+            </td>
+            <td><a href="/delete?id={{_id}}" 
+                onclick="return confirmDelete('{{productName}}')">Delete</a></td>
+        </tr>
+        {{/each}}
+    </table>
+    {{> footer}}
+    <script>    
+        function confirmDelete(name){
+            return confirm('Are your sure????' + name);
+        }
+    </script>
+</body>
+</html>
