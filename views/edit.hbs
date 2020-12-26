@@ -5,16 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insert a new Product</title>
 </head>
+<style>
+    body {
+        background-color: rgb(117, 94, 98);
+    }
+
+ 
+
+    .table {
+        border-collapse: separate;
+    }
+
+    .main {
+        width: 90%;
+        text-align: center;
+
+    }
+</style>
 <body>
+   <div class="container">
+       <div class="main">
+           <h1>Edit Product</h1>
     <form action="/doEdit" method="post">
+    <table class="center">
         <input type="hidden" name="id" value="{{model._id}}">
-        Name <input type="text" name="txtName" value="{{model.productName}}">     
-        <br>
-        Color <input type="text" name="txtColor" value="{{model.color}}">
-        <Br>
-        Price <input type="text" name="txtPrice" value="{{model.price}}">     
-        <br>
+        Name: <input type="text" name="txtName" value="{{model.productName}}">     
+        <br><br>
+        Color: <input type="text" name="txtColor" value="{{model.color}}">
+        <Br><br>
+        Price: <input type="text" name="txtPrice" value="{{model.price}}">     
+        <br><br>
         <input type="submit" value="Update">
+    </table>
     </form>
+    </div>
+   </div>
 </body>
 </html>

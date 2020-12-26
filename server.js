@@ -6,7 +6,7 @@ app.set('view engine','hbs');
 hbs.registerPartials(__dirname +'/views/partials')
 
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb+srv://tommy:112233445566@cluster0.lkrga.mongodb.net/test';  
+var url = 'mongodb+srv://alamin165:123456abc@cluster0.tgnmd.mongodb.net/test';  
 
 app.get('/', async (req,res)=>{
     let client= await MongoClient.connect(url);
@@ -40,8 +40,8 @@ app.post('/doInsert',async (req,res)=>{
         name : '',
         price: ''
     }
-    if(nameInput !=null && nameInput.length <5){
-        errorMsg.name = "Name's length >=5";
+    if(nameInput !=null && nameInput.length <1){
+        errorMsg.name = "Name's length >=1";
     }
     if(priceInput !=null && eval(priceInput)< 0){
         errorMsg.price = 'Price must >=0'

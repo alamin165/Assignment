@@ -3,19 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insert a new Product</title>
+    <title>Insert new Product</title>
 </head>
+<style>
+    body {
+        background-color: cyan;
+    }
+
+    .container {
+        width: 50%;
+        background-color: darkgreen;
+        margin-left: 300px;
+    }
+
+    .table {
+        color: darkolivegreen;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .main {
+        width: 90%;
+        text-align: center;
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+</style>
 <body>
-    <form action="/doInsert" method="post">
-        Name <input type="text" name="txtName" id="">
-        {{error.name}}
-        <br>
-        Color <input type="text" name="txtColor" id="">
-        <Br>
-        Price <input type="text" name="txtPrice" id="">
-        {{error.price}}
-        <br>
-        <input type="submit" value="Insert">
-    </form>
+    <div class="container">
+        <div class="main">
+            <h1>Insert Product</h1>
+            <div class="insert">
+                <form action="/doInsert" method="post">
+                  <table>
+                      Name: <input type="text" name="txtName" id="">
+                      {{error.name}} 
+                      <br><br>
+                      Color: <input type="text" name="txtColor" id="">
+                      <Br><br>
+                      Price: <input type="text" name="txtPrice" id="">
+                      {{error.price}}
+                      <br><br>
+                      <input type="submit" value="Insert">
+                  </table>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
